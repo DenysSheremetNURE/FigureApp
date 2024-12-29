@@ -1,9 +1,10 @@
-﻿using FigureLibrary;
+﻿using FigureApp.Interfaces;
+using FigureLibrary;
 using System;
 
 namespace FigureLibrary
 {
-    public class Circle : Figure
+    public class Circle : Figure, ICircle
     {
         public XY center { get; set; }
         public double radius { get; set; }

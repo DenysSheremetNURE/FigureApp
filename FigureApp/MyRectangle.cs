@@ -1,9 +1,10 @@
-﻿using FigureLibrary;
+﻿using FigureApp.Interfaces;
+using FigureLibrary;
 using System;
 
 namespace FigureLibrary
 {
-    public class MyRectangle : Figure
+    public class MyRectangle : Figure, IMyRectangle
     {
         //going  from the left bottom point counterclockwise
         public XY point1 { get; private set; }

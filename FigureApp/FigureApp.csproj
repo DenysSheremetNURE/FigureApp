@@ -56,10 +56,16 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\ICircle.cs" />
+    <Compile Include="Interfaces\IFigure.cs" />
+    <Compile Include="Interfaces\IParallelogram.cs" />
+    <Compile Include="Interfaces\IMyRectangle.cs" />
+    <Compile Include="Interfaces\IXY.cs" />
     <Compile Include="Parallelogram.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MyRectangle.cs" />
+    <Compile Include="XY.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,9 +1,10 @@
-﻿using FigureLibrary;
+﻿using FigureApp.Interfaces;
+using FigureLibrary;
 using System;
 
 namespace FigureLibrary
 {
-    public class Parallelogram : Figure
+    public class Parallelogram : Figure, IParallelogram
     {
         //going  from the left bottom point counterclockwise
         public XY point1 { get; private set; }
