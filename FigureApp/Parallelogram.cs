@@ -80,8 +80,9 @@ namespace FigureLibrary
 
         public override double Area()
         {
-            double cos = (side1 * side1 + side2 * side2 - Math.Pow((point1 ^ point3), 2)) / (2 * side1 * side2);
-            return Math.Round(cos * side1 * side2);
+            double cos = (side1 * side1 + side2 * side2 - Math.Pow((point2 ^ point4), 2)) / (2 * side1 * side2);
+            double sin = Math.Sqrt(1 - cos * cos);
+            return Math.Round(Math.Abs(sin) * side1 * side2);
         }
 
         public override double Perimeter()

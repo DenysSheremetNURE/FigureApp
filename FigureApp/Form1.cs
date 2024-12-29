@@ -20,11 +20,6 @@ namespace FigureApp
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void AddCircle(double centerX, double centerY, double radius)
         {
             var series = new Series()
@@ -66,7 +61,7 @@ namespace FigureApp
             series.Points.AddXY(x1, y1);
 
             data.AddFigure(temp);
-            dataGridView1.Rows.Add(data.FiguresCount() - 1, "Parallelogram", $"{temp.point1},{temp.point2},{temp.point3},{temp.point4}");
+            dataGridView1.Rows.Add(data.FiguresCount() - 1, "Parallelogram", $"{temp.point1},{temp.point2},{temp.point3},{temp.point4},{temp.point4}");
             chart.Series.Add(series);
         }
 
@@ -116,8 +111,8 @@ namespace FigureApp
         {
             if (dataGridView1.SelectedCells.Count > 0)
             {
-                var selectedCell = dataGridView1.SelectedCells[0];
-                int idx = Convert.ToInt32(selectedCell.Value);
+                var selectedRow = dataGridView1.CurrentRow;
+                int idx = Convert.ToInt32(selectedRow.Cells[0].Value);
                 double result = data.figures[idx].Area();
                 MessageBox.Show($"The area of figure №{idx} is: {result}", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -127,8 +122,8 @@ namespace FigureApp
         {
             if (dataGridView1.SelectedCells.Count > 0)
             {
-                var selectedCell = dataGridView1.SelectedCells[0];
-                int idx = Convert.ToInt32(selectedCell.Value);
+                var selectedRow = dataGridView1.CurrentRow;
+                int idx = Convert.ToInt32(selectedRow.Cells[0].Value);
                 double result = data.figures[idx].Perimeter();
                 MessageBox.Show($"The Perimeter of figure №{idx} is: {result}", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
